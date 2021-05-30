@@ -1,13 +1,19 @@
 import React from 'react'
+import Todoitem from "./Todoitem";
 
 
-const Itemlist = () => {
+const Itemlist = ({todos}) => {
     return (
-        <div className='item'>
 
-        </div>
+        todos.map(todo => (
+            <Todoitem todo={todo}/>
+        ))
     )
 }
+
+
+
+
 
 
 export default Itemlist

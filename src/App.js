@@ -1,12 +1,18 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './styles.css';
 import Createitem from "./components/Createitem";
 import Itemlist from "./components/Itemlist";
-import {Provider} from "react-redux";
+
+
+
+
 
 
 
 function App() {
+
+    const [todos, setTodos] = useState([])
+
   return (
       <div className='container'>
     <div className='main'>
@@ -14,7 +20,7 @@ function App() {
         <div className='list-container'>
             <h1>TODO</h1>
             <Createitem/>
-            <Itemlist/>
+            <Itemlist todos={todos}/>
         </div>
 
     </div>
