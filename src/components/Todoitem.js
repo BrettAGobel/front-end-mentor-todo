@@ -2,10 +2,13 @@ import React from 'react'
 
 
 
-const Todoitem = ({todos}) => {
+const Todoitem = ({todo}) => {
     return (
-        <div>
+        <div className='item'>
 
+
+            <label><input type='checkbox' name='task-complete' checked='false'/><span className='custom-checkbox'></span> </label>
+            <span>{todo}</span>
         </div>
 
     )
