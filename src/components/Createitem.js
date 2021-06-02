@@ -20,7 +20,7 @@ const handleSubmit = (e) => {
 
     return (
         <div>
-            <form className='item-container' onSubmit={handleSubmit}>
+            <form className='search-container' onSubmit={handleSubmit}>
             <input type='text' placeholder='Create new TODO' name='text' value={text} onChange={ e => setText(e.target.value)} />
                 <input type='submit' value='Add Item' onSubmit={handleSubmit}/>
                 <input type='submit' value='Clear List' onClick={handleClear}/>

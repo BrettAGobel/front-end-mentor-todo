@@ -5,6 +5,7 @@
 
 @media screen and (min-width: 580px) {
     .main {
+        z-index: -1;
     display: flex;
         flex-wrap: nowrap;
     min-height: 300px;
@@ -37,21 +38,17 @@
 }
 
 .list-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    width: 100%;
-    /*justify-content: center;*/
-    /*align-items: center;*/
-    margin: 0 20%;
+    margin-top: 1rem;
+    border: black solid 1px;
+
 }
 
 
-.item-container {
+.search-container {
     flex-wrap: wrap;
     display: flex;
     justify-content: center;
-    min-width: 100%;
+    /*min-width: 100%;*/
     height: 3rem;
     border-radius: 1rem;
 }
@@ -62,16 +59,19 @@
 .item {
 
 
-    margin: 1rem 0;
+
     box-sizing: border-box;
-    display: flex;
+    display: grid;
+    grid-template-columns: 10% 90%;
     align-items: center;
+
+    /*align-items: center;*/
     padding: 0 0 0 20px;
-    background-color: lightblue;
+    background-color: darkgray;
     min-width: 0;
     height: 3rem;
-    border: black 1px;
-    border-radius: 1rem;
+    border-top: white 1px solid;
+
 }
 
 input[type=submit] {
@@ -109,9 +109,88 @@ input[type=submit]:hover {
     100% {background-color: darkgrey}
 }
 
-input[type=checkbox] {
-    opacity: 0;
-    position: absolute;
-    cursor: pointer;
+
+
+
+
+
+.tester {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: -200px;
+    margin: 0 20%;
+
+
 }
 
+.todo-text {
+    grid-column-start: 2;
+
+    color: red;
+}
+
+label {
+    justify-self: center;
+
+}
+
+.checkbox-wrapper {
+    justify-self: center;
+    align-self: center;
+    position: relative;
+}
+
+
+input[type=checkbox] {
+    z-index: 1;
+    opacity: 1;
+    cursor: pointer;
+    height: 2rem;
+    width: 2rem;
+
+}
+
+
+.checkbox-wrapper label:before {
+    z-index: 0;
+    content: "";
+    height: 2rem;
+    width: 2rem;
+    position: absolute;
+    border: 2px solid red;
+    border-radius: 50%;
+    top: 0;
+    left: 0;
+    /*cursor: pointer;*/
+
+}
+
+.checkbox-wrapper label:after {
+    z-index: 0;
+    content: "";
+    height: 1.5rem;
+    width: 1.5rem;
+    position: absolute;
+    background-color: blue;
+    border-radius: 50%;
+    top: 15%;
+    left: 15%;
+    /*cursor: pointer;*/
+    opacity: 0;
+}
+
+
+.todo-text {
+    margin-left: 10%;
+}
+
+.checkbox-wrapper input:checked + span:after {
+    opacity: 1;
+}
+
+/*.checkbox-wrapper label {*/
+/*    height: 10px;*/
+/*    width: 10px;*/
+/*    background-color: blue;*/
+/*}*/

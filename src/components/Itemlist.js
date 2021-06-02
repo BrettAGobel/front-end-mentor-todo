@@ -5,8 +5,9 @@ import Todoitem from "./Todoitem";
 const Itemlist = ({todos}) => {
     return (
 
-        todos.map(todo => (
-            <Todoitem todo={todo}/>
+        todos.listItems.map(todo => (
+            <Todoitem todo={todo} todos={todos}/>
+
         ))
     )
 }

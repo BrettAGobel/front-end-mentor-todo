@@ -13,15 +13,22 @@ import Todoitem from "./components/Todoitem";
 function App() {
 
 
-    let listItem = document.getElementsByClassName('container')
 
-    const [todos, setTodos] = useState([])
+
+    const [todos, setTodos] = useState({id: [], listItems: []})
     const addTask = (text) => {
+
         if (text === "") {
-            return
-        } else {let copy = [...todos]
-            copy.push(text)
-            setTodos(copy)}
+        return
+        } else {
+            let copyItems = [...todos.listItems]
+            let idIncrement = [...todos.id]
+            copyItems.push(text)
+            idIncrement.push(copyItems.length -1)
+            setTodos({id: idIncrement, listItems: copyItems})
+        }
+
+
 
 
 
@@ -39,14 +46,15 @@ function App() {
       <div className='container'>
 
     <div className='main'>
-
-        <div className='list-container'>
-            <h1>TODO</h1>
-            <Createitem addTask={addTask} clearTask={clearTask}/>
-            <Itemlist todos={todos}/>
-        </div>
-
     </div>
+    <div className='tester'>
+          <h1>TODO</h1>
+          <Createitem addTask={addTask} clearTask={clearTask}/>
+          <div className='list-container'>
+
+              <Itemlist todos={todos}/>
+          </div>
+          </div>
       </div>
   );
 }
