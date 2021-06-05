@@ -5,9 +5,14 @@ const Createitem = ({addTask, clearTask}) => {
 
 let [text, setText] = useState("")
 
+
+
+
+
 const handleSubmit = (e) => {
     e.preventDefault()
     addTask(text)
+
 
 
 }

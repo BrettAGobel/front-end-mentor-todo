@@ -2,30 +2,37 @@ import React, {useState} from 'react'
 
 
 
-const Todoitem = ({todo, todos}) => {
+const Todoitem = ({todo, todos, newState}) => {
 
 
-    // const [inputId, setInputId] = useState({item: todos, id: 0})
-
-
-// let idCalc = (todos) => {
-//     if (todos.id === 0) {
-//         return todos.id
-//     } else return todos.id - 1
+//     const [inputId, setInputId] = useState({todos })
+//
+//
+// let idCalc = (idValue) => {
+//     let newValue = 0
+//     for (let i = 0; i < idValue.length; i++) {
+//         newValue += idValue[i]
+//     }
+//     return newValue
 // }
+// let idValue = inputId.id
+//
+//     setInputId(idCalc(idValue))
 
 
 
     return (
-        <div className='item'>
+        <div className='item' >
 
             <div className='checkbox-wrapper'>
-                <input type='checkbox' name='task-complete' id={ 1} />
+                <input type='checkbox' name='task-complete' id={`custom-checkbox-${1}`} />
                 <label htmlFor='custom-checkbox'></label>
                 {/*<span></span>*/}
 
             </div>
-            <span className='todo-text'>{todo}</span>
+            <span className='todo-text'>{newState.map(obj => {
+                obj.newTodo.value
+            })}</span>
         </div>
 
     )
