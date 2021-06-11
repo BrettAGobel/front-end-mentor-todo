@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 
 
-const Createitem = ({addTask, clearTask}) => {
+const Createitem = ({addTodo, clearTask}) => {
 
 let [text, setText] = useState("")
 
@@ -11,7 +11,7 @@ let [text, setText] = useState("")
 
 const handleSubmit = (e) => {
     e.preventDefault()
-    addTask(text)
+    addTodo(text)
 
 
 

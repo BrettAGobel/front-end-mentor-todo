@@ -126,8 +126,7 @@ input[type=submit]:hover {
 
 .todo-text {
     grid-column-start: 2;
-
-    color: red;
+    color: white;
 }
 
 label {
@@ -144,7 +143,7 @@ label {
 
 input[type=checkbox] {
     z-index: 1;
-    opacity: 1;
+    opacity: 0;
     cursor: pointer;
     height: 2rem;
     width: 2rem;
@@ -158,11 +157,12 @@ input[type=checkbox] {
     height: 2rem;
     width: 2rem;
     position: absolute;
-    border: 2px solid red;
+    border: 2px solid black;
+
     border-radius: 50%;
     top: 0;
     left: 0;
-    /*cursor: pointer;*/
+    cursor: pointer;
 
 }
 
@@ -176,7 +176,7 @@ input[type=checkbox] {
     border-radius: 50%;
     top: 15%;
     left: 15%;
-    /*cursor: pointer;*/
+    cursor: pointer;
     opacity: 0;
 }
 
@@ -185,9 +185,43 @@ input[type=checkbox] {
     margin-left: 10%;
 }
 
-.checkbox-wrapper input:checked + span:after {
+.checkbox-wrapper input:checked + label:after {
     opacity: 1;
 }
+
+.checkbox-wrapper input:checked + label:before {
+    content: "";
+    background-color: cadetblue;
+
+
+}
+
+.item .checkbox-wrapper input:checked .todo-text {
+
+    color: red;
+
+
+}
+
+
+.slider-container {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    overflow: hidden;
+    width: 100%;
+    height: 200px;
+    background-color: lightblue;
+
+}
+
+.slider-image {
+    padding: 1rem;
+    width: auto;
+    height: 80%;
+}
+
+
 
 /*.checkbox-wrapper label {*/
 /*    height: 10px;*/

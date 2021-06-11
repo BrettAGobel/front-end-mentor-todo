@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useEffect, useRef, useState} from 'react'
 import Todoitem from "./Todoitem";
 
 
@@ -32,10 +32,19 @@ const Itemlist = ({todos, newState}) => {
 
     const todoList = newState.map((item) => (
 
-                <Todoitem newState={newState}/>
+        <div className='item' >
+
+            <div className='checkbox-wrapper'>
+                <input type='checkbox' name='task-complete' id={`custom-checkbox-${item.id}`}/>
+                <label htmlFor={`custom-checkbox-${item.id}`}></label>
+            </div>
+            <span className='todo-text' >{item.newTodo}</span>
+        </div>
 
         )
     )
+
+
 
     return (
         <div>

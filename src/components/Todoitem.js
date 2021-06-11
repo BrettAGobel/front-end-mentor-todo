@@ -20,19 +20,25 @@ const Todoitem = ({todo, todos, newState}) => {
 //     setInputId(idCalc(idValue))
 
 
+    // const todoValue = newState.map((item) => (
+    //
+    //         item.newTodo
+    //
+    //     )
+    // )
+
+
 
     return (
         <div className='item' >
 
             <div className='checkbox-wrapper'>
-                <input type='checkbox' name='task-complete' id={`custom-checkbox-${1}`} />
+                <input type='checkbox' name='task-complete'  />
                 <label htmlFor='custom-checkbox'></label>
                 {/*<span></span>*/}
 
             </div>
-            <span className='todo-text'>{newState.map(obj => {
-                obj.newTodo.value
-            })}</span>
+            <span className='todo-text'></span>
         </div>
 
     )
